@@ -1,0 +1,12 @@
+#login__con{
+    display: flex;
+    
+}
+#login__items{
+   margin-left:40%;
+   margin-top: 100px;
+  
+   z-index: 1;
+    border:solid black 1px;
+   border-radius: 10px;
+}

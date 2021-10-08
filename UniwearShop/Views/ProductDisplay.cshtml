@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ProductDisplay>
+@using Uniwear.core.ViewModels
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+
+}
+<head>
+    <link href="~/css/productDisplay.css" rel="stylesheet" />
+</head>
+<div id="section-product-display">
+    <div class="container">
+        @{
+            DisplayViewModel viewModel = new DisplayViewModel() { productDisplay = Model };
+            Html.RenderAction("RenderProduct", "DisplaySurface", viewModel);
+        }
+    </div>
+</div>
+

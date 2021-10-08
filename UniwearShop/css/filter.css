@@ -1,0 +1,56 @@
+﻿.filters {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.2s;
+    padding-top: 60px;
+}
+
+    .filters label {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+        transition: 0.2s;
+        text-align: right;
+        clear: both;
+        float: left;
+        margin-right: 15px
+    }
+
+    .filters button {
+        
+        
+        position:absolute;
+        bottom: 20px;
+        left: 60px;
+       
+    }
+    .filters label input {
+        margin-right: 15px
+    }
+
+    .filters .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+
+    @media screen and (max-height: 450px) {
+    .filters {
+        padding-top: 15px;
+    }
+
+        .filters label {
+            font-size: 18px;
+        }
+}

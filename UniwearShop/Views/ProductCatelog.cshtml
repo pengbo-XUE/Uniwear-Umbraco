@@ -1,0 +1,64 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ProductCatelog>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var products = Model.Root().Descendants().Where(m => m.IsDocumentType("productDisplay") && m.IsVisible());
+    string imageUrl = "";
+}
+
+<head>
+    <link href="~/css/card.css" rel="stylesheet" />
+</head>
+@Html.Partial("~/Views/Partials/carousel.cshtml")
+@Html.Partial("~/Views/Partials/filters.cshtml")
+<div id="product_container">
+    <div class="row rowone flex-box" id="product-list">
+        @if (products != null && products.Any())
+        {
+            foreach (ProductDisplay product in products)
+            {
+                if (product.Ancestor().Name == Model.Name)
+                {
+                    if (product.ProductImage != null)
+                    {
+                        imageUrl = product.ProductImage.GetCropUrl("catelog.display");
+                    }
+                    <div class="page-inner">
+
+                        <div class="el-wrapper">
+                            <div class="box-up">
+                                <img class="img" src="@imageUrl" alt="">
+                                <div class="img-info">
+                                    <div class="info-inner">
+                                        <span class="p-name">@product.ProductName</span>
+                                        <span class="p-company">@product.ProductBrand</span>
+                                    </div>
+                                    <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span></div>
+                                </div>
+                            </div>
+
+                            <div class="box-down">
+                                <div class="h-bg">
+                                    <div class="h-bg-inner"></div>
+                                </div>
+
+                                <a class="cart" href="@product.Url()">
+                                    <span class="price">@product.ProductPrice</span>
+                                    <span class="add-to-cart">
+                                        <span class="txt">Take a closer look</span>
+                                    </span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+            }
+
+        }
+
+
+    </div>
+</div>
