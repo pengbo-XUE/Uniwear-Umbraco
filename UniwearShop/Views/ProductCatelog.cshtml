@@ -1,8 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ProductCatelog>
 @using ContentModels = Umbraco.Web.PublishedModels;
+@using Uniwear.core.Extensions
+@using Uniwear.core
 @{
     Layout = "master.cshtml";
-    var products = Model.Root().Descendants().Where(m => m.IsDocumentType("productDisplay") && m.IsVisible());
+    var products = Model.Root().Descendants().Where(m => m.IsDocumentType("product") && m.IsVisible());
     string imageUrl = "";
 }
 
@@ -15,7 +17,7 @@
     <div class="row rowone flex-box" id="product-list">
         @if (products != null && products.Any())
         {
-            foreach (ProductDisplay product in products)
+            foreach (Product product in products)
             {
                 if (product.Ancestor().Name == Model.Name)
                 {
@@ -43,22 +45,19 @@
                                 </div>
 
                                 <a class="cart" href="@product.Url()">
-                                    <span class="price">@product.ProductPrice</span>
-                                    <span class="add-to-cart">
-                                        <span class="txt">Take a closer look</span>
+                                    <span class="price">
+                                        AU$ @(product.CalculatePrice().Rounded(2).WithTax)
                                     </span>
+                                        <span class="add-to-cart">
+                                            <span class="txt">Take a closer look</span>
+                                        </span>
                                 </a>
-
                             </div>
-
                         </div>
                     </div>
                 }
-
             }
-
         }
-
-
     </div>
 </div>
+@*@(product.Value("productPrice").TryConvertTo<Vendr.Umbraco.Models.PricePropertyValue>().Result.GetPriceFor(Consts.AUDId).Value)*@

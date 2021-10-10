@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vendr.Web</name>
+    </assembly>
+    <members>
+        <member name="M:Vendr.Extensions.HtmlHelperExtensions.BeginPaymentForm(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Vendr.Core.Models.OrderReadOnly)">
+            <summary>
+            Helper method to create a payment form for the given order
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vendr.Extensions.HtmlHelperExtensions.BeginPaymentForm(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Vendr.Core.Models.OrderReadOnly,System.Object)">
+            <summary>
+            Helper method to create a payment form for the given order
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="order"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vendr.Extensions.HtmlHelperExtensions.BeginPaymentForm(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Vendr.Core.Models.OrderReadOnly,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Helper method to create a payment form for the given order
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="order"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vendr.Extensions.HtmlHelperExtensions.RenderPaymentForm(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Vendr.Core.Models.OrderReadOnly,System.Collections.Generic.IDictionary{System.String,System.Object},Vendr.Core.Services.IOrderService,Vendr.Core.Services.IPaymentMethodService,Vendr.Core.Services.IPaymentProviderService,Vendr.Core.PaymentProviders.PaymentProviderContextFactory,Vendr.Core.Generators.IOrderNumberGenerator,Vendr.Common.IUnitOfWorkProvider,Vendr.Core.Security.IMembershipHelper)">
+            <summary>
+            Helper method to create a payment form for the given order
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="order"></param>
+            <param name="htmlAttributes"></param>
+            <param name="paymentMethodService"></param>
+            <param name="paymentProviderService"></param>
+            <param name="uriResolver"></param>
+            <param name="hashProvider"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,92 @@
+﻿@using Uniwear.core.ViewModels
+@inherits UmbracoViewPage<DisplayViewModel>
+@using Uniwear.core.Extensions
+
+@{
+    ViewBag.Title = "DisplayProduct";
+    string imageUrl = "";
+
+    Product display = (Product)Model.productDisplay;
+
+    if (display.ProductImage != null)
+    {
+        imageUrl = display.ProductImage.GetCropUrl("product.display");
+    }
+    string s = display.Ancestor().Name;
+}
+@if (ViewData["Msg"] != null)
+{
+    <div style="text-align:center; margin-bottom:30px;">
+        <h2 id="Msg">"@ViewData["Msg"]"</h2>
+    </div>
+
+}
+
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <img src="@imageUrl" alt="@display.ProductName by @display.ProductBrand" />
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <h3>@display.ProductName by @display.ProductBrand</h3>
+
+        <hr />
+        <h5>Description</h5>
+        <p>@display.ProductDescription</p>
+        <hr />
+        <h4>Buy it now</h4>
+        <div class="product-display-cta">
+            <p class="product-display-price">AU$ @(display.CalculatePrice().Rounded(2).WithTax) </p>
+            
+            @using (Html.BeginUmbracoForm("AddToCart", "CartSurface"))
+            {
+                @Html.Hidden("prodcutReference", display.GetProductReference())
+
+                <h4 style="margin-top:50px;">Please pick a size</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tr>
+
+                        @if (display.Ancestor().Value<string>("gender") == "Woman's")
+                        {
+
+                            <td>Size 6 @Html.RadioButtonFor(model => model.size, "6")</td>
+                            <td>Size 8 @Html.RadioButtonFor(model => model.size, "8")</td>
+                            <td>Size 10 @Html.RadioButtonFor(model => model.size, "10")</td>
+                            <td>Size 12 @Html.RadioButtonFor(model => model.size, "12")</td>
+                        }
+                        else
+                        {
+                            <td>Size S @Html.RadioButtonFor(model => model.size, "S")</td>
+                            <td>Size M @Html.RadioButtonFor(model => model.size, "M")</td>
+                            <td>Size L @Html.RadioButtonFor(model => model.size, "L")</td>
+                            <td>Size XL @Html.RadioButtonFor(model => model.size, "XL")</td>
+                        }
+                    </tr>
+                </table>
+                
+                @Html.EditorFor(m=>m.quantity, new { htmlAttributes = new { @class = "verificationStatusSelect", min = 1 } })
+                <button class="btn btn-dark" type="submit">Add To Cart</button>
+            }
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    setTimeout(function () {
+        $('#Msg').fadeOut('fast');
+    }, 3000);
+</script>
+
+@*@display.ProductPrice.GetPriceFor(Consts.AUDId).Value*@
+@*display.CalculatePrice().Rounded(2).WithTax*@

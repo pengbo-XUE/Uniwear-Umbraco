@@ -1,0 +1,27 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <VendrContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Vendr\**\*.*</VendrContentFilesPath>
+    </PropertyGroup>
+
+    <Target Name="CopyVendrAssets" BeforeTargets="Build">
+        <ItemGroup>
+            <VendrContentFiles Include="$(VendrContentFilesPath)" />
+        </ItemGroup>
+        <Message Text="Copying Vendr files: $(VendrContentFilesPath) - #@(VendrContentFiles->Count()) files"  Importance="high" />
+        <Copy
+            SourceFiles="@(VendrContentFiles)"
+            DestinationFiles="@(VendrContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Vendr\%(RecursiveDir)%(Filename)%(Extension)')"
+            SkipUnchangedFiles="true" />
+
+    </Target>
+
+    <Target Name="ClearVendrAssets" BeforeTargets="Clean">
+        <ItemGroup>
+            <VendrDir Include="$(MSBuildProjectDirectory)\App_Plugins\Vendr\" />
+        </ItemGroup>
+        <Message Text="Clear old Vendr data"  Importance="high" />
+        <RemoveDir Directories="@(VendrDir)"  />
+    </Target>
+
+</Project>

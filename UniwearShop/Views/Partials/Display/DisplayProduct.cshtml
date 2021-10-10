@@ -1,10 +1,12 @@
 ﻿@using Uniwear.core.ViewModels
 @inherits UmbracoViewPage<DisplayViewModel>
+@using Uniwear.core.Extensions
+
 @{
     ViewBag.Title = "DisplayProduct";
     string imageUrl = "";
 
-    ProductDisplay display = (ProductDisplay)Model.productDisplay;
+    Product display = (Product)Model.productDisplay;
 
     if (display.ProductImage != null)
     {
@@ -34,8 +36,12 @@
         <hr />
         <h4>Buy it now</h4>
         <div class="product-display-cta">
-            <p class="product-display-price">AUD @display.ProductPrice</p>
-            <form method="post" asp-controller="DisplaySurface" asp-action="RenderProduct">
+            <p class="product-display-price">AU$ @(display.CalculatePrice().Rounded(2).WithTax) </p>
+            
+            @using (Html.BeginUmbracoForm("AddToCart", "CartSurface"))
+            {
+                
+                 <input type="hidden" name="pageProdcutReference" value="@display.GetProductReference()" />
                 <h4 style="margin-top:50px;">Please pick a size</h4>
                 <table class="table">
                     <thead>
@@ -65,10 +71,11 @@
                         }
                     </tr>
                 </table>
-
-                <input class="quantity" name="quantity" type="number" value=1 min="1">
+                
+                @Html.EditorFor(m=>m.quantity, new { htmlAttributes = new { @class = "verificationStatusSelect", min = 1 } })
                 <button class="btn btn-dark" type="submit">Add To Cart</button>
-            </form>
+            }
+
         </div>
 
 
@@ -80,3 +87,6 @@
         $('#Msg').fadeOut('fast');
     }, 3000);
 </script>
+
+@*@display.ProductPrice.GetPriceFor(Consts.AUDId).Value*@
+@*display.CalculatePrice().Rounded(2).WithTax*@

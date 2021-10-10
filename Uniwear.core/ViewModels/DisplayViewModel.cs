@@ -13,6 +13,8 @@ namespace Uniwear.core.ViewModels
     {
         [Required (ErrorMessage ="Please pick a size")]
         public string size { get; set; }
+        public int quantity { get; set; }
         public IPublishedContent productDisplay { get; set; }
+        public string productReference { get; set; }
     }
 }
