@@ -177,7 +177,6 @@ C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bi
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\BouncyCastle.Crypto.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\System.Linq.Dynamic.Core.pdb
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\System.Linq.Dynamic.Core.xml
-C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\obj\Debug\Uniwear.core.csproj.AssemblyReference.cache
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\DeepEqual.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\RT.Comb.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Common.dll
@@ -191,3 +190,4 @@ C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bi
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Umbraco.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Umbraco.Web.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Web.xml
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\obj\Debug\Uniwear.core.csproj.AssemblyReference.cache

@@ -9,7 +9,10 @@
     font-family: 'Farro', sans-serif;
 }
 
-
+.navbar__container ul {
+    list-style-type: none !important;
+   
+}
 
 :root {
   --color1: #098aaf;
@@ -37,20 +40,38 @@ html{
     top: 0;
     z-index: 90;
     background-color: #Fdfcfa;
-   
 }
-.navbar {
-    
-    height: 80px;
+.navbar_Uni {
+    display:inline-flex;
+    height: 65px;
     margin-top: 0px;
-    margin-left: 300px;
     top: 0px;
-    width: 800px;
+    width: 100%;
+    margin:auto 0;
     z-index: 95;
     border: balck solid 3px;
     border-radius: 50px;
     transition: all 0.5s ease;
 }
+
+
+#flex_1 {
+    flex: 2;
+    order: 1;
+}
+
+#flex_2 {
+    
+    flex: 4;
+    order: 2;
+}
+
+#flex_3 {
+    flex: 2;
+    order: 3;
+    justify-content:center;
+}
+
 
 .navbar.hide {
 	top: -80px;
@@ -61,10 +82,10 @@ html{
   display: flex;
   height: 80px;
   z-index:99;
-  width: 100%;
-  margin: 0 ,auto;
+  margin: 0 auto;
   padding: 0 50px;
-  
+  width:1000px;
+  justify-content:center;
 }
 .logo__container{
   display: flex;
@@ -87,24 +108,36 @@ html{
   font-size: 3rem;
 }
 
-.navbar__menu{ /*the entire menu item*/
-  display: flex;
-  align-items: center;
-  list-style: none;
-  text-align: center;
+.navbar__menu { /*the entire menu item*/
+    display: flex;
+    /*align-items: center;*/
+    list-style: none;
+    /*text-align: center;*/
+    width: fit-content;
+    width: -moz-fit-content;
 }
+
+.navbar__menu_side {
+    display: flex;
+  /*align-items: center;*/
+  list-style: none;
+  /*text-align: center;*/
+
+}
+
 .navbar__item{  /*this just targets the links but not the button*/
   height: 80px;
 }
-.navbar__links{
-  color: var(--color3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  font-weight: bold;
+.navbar__links {
+    color: #343A40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    margin-top: 0px !important;
+    height: 100%;
+    font-weight: bold;
 }
 
 .navbar__links:hover{
@@ -152,9 +185,7 @@ html{
   justify-content: center;
   height: 100%;
 }
-#signup__btn{
- margin-left: 40px;
-}  
+
 a{
    cursor: pointer ;
    text-decoration: none;
@@ -173,6 +204,9 @@ a{
   #search__logo{
     opacity: 0;
   }
+    .navbar__menu_side {
+        opacity:0;
+    }
   .navbar__menu{
     display: grid;
     grid-template-columns: auto;
@@ -259,3 +293,6 @@ a{
   }
 }
 
+@-moz-document url-prefix() {
+ 
+}

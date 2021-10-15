@@ -21,7 +21,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Product</summary>
 	[PublishedModel("product")]
-	public partial class Product : PublishedContentModel, IProductControl, ISEocontrols, IVisibilityControls
+	public partial class Product : PublishedContentModel, IOnSaleControl, IProductControl, ISEocontrols, IVisibilityControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -50,6 +50,27 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
 		[ImplementPropertyType("productBrand")]
 		public virtual string ProductBrand => this.Value<string>("productBrand");
+
+		///<summary>
+		/// Discount: discount percentage eg: enter 30 for 30% off
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
+		[ImplementPropertyType("discount")]
+		public virtual int Discount => global::Umbraco.Web.PublishedModels.OnSaleControl.GetDiscount(this);
+
+		///<summary>
+		/// Discount Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
+		[ImplementPropertyType("discountName")]
+		public virtual string DiscountName => global::Umbraco.Web.PublishedModels.OnSaleControl.GetDiscountName(this);
+
+		///<summary>
+		/// Discount toggle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
+		[ImplementPropertyType("discountToggle")]
+		public virtual bool DiscountToggle => global::Umbraco.Web.PublishedModels.OnSaleControl.GetDiscountToggle(this);
 
 		///<summary>
 		/// Price

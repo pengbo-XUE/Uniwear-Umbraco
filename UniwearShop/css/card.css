@@ -83,7 +83,7 @@ body {
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
-    color: #818181;
+    color: #464646;
 }
 
 .el-wrapper:hover .add-to-cart {

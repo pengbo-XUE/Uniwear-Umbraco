@@ -392,6 +392,7 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\clean-blog.js" />
     <Content Include="scripts\contactForm.js" />
+    <Content Include="scripts\GoogleMap.js" />
     <Content Include="scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="scripts\jquery.validate.min.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
@@ -418,7 +419,9 @@
     <Compile Include="App_Data\Models\IconLinkItem.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\MainImageControls.generated.cs" />
+    <Compile Include="App_Data\Models\Map.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\OnSaleControl.generated.cs" />
     <Compile Include="App_Data\Models\Product.generated.cs" />
     <Compile Include="App_Data\Models\ProductCatelog.generated.cs" />
     <Compile Include="App_Data\Models\ProductControl.generated.cs" />
@@ -499,24 +502,8 @@
     <Content Include="Views\Partials\BlockList\Default.cshtml" />
     <Content Include="VENDR_LICENSE.md" />
     <Content Include="Views\Partials\Display\CartCount.cshtml" />
-    <Content Include="Views\Partials - Copy\BlockList\Default.cshtml" />
-    <Content Include="Views\Partials - Copy\carousel.cshtml" />
-    <Content Include="Views\Partials - Copy\Display\cartCount.cshtml" />
-    <Content Include="Views\Partials - Copy\Display\DisplayProduct.cshtml" />
-    <Content Include="Views\Partials - Copy\filters.cshtml" />
-    <Content Include="Views\Partials - Copy\footer.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Bootstrap3.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Clean.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Editors\Base.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Editors\Embed.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Editors\Macro.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Editors\Media.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Editors\Rte.cshtml" />
-    <Content Include="Views\Partials - Copy\Grid\Editors\Textstring.cshtml" />
-    <Content Include="Views\Partials - Copy\mainNavigation.cshtml" />
-    <Content Include="Views\Partials - Copy\metaData.cshtml" />
-    <Content Include="Views\Partials - Copy\xmlSitemap.cshtml" />
+    <Content Include="Views\Cart.cshtml" />
+    <Content Include="Views\Map.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

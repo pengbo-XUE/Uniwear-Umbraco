@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using Umbraco.Web.Mvc;
-using Vendr.Core;
 using Vendr.Core.Services;
 using Vendr.Core.Session;
 using Uniwear.core.Extensions;
@@ -28,7 +23,6 @@ namespace Uniwear.core.Controllers
             _orderService = orderService;
             _workProvider = workProvider;
         }
-
 
         //displays number of item in count 
         [ChildActionOnly]
@@ -89,8 +83,8 @@ namespace Uniwear.core.Controllers
             TempData["cartUpdate"] = "true";
             return RedirectToCurrentUmbracoPage();
         }
-        [HttpPost]
-        public ActionResult removeFromCart(RemoveFromCartDto postModel)
+        [HttpGet]
+        public ActionResult RemoveFromCart(RemoveFromCartDto postModel)
         {
 
             try
@@ -114,5 +108,6 @@ namespace Uniwear.core.Controllers
             TempData["itemRemoved"] = "true";
             return RedirectToCurrentUmbracoPage();
         }
+        
     }
 }

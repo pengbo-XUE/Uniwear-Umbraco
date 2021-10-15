@@ -19,71 +19,79 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Cart</summary>
-	[PublishedModel("cart")]
-	public partial class Cart : PublishedContentModel, IMainImageControls, ISEocontrols, IVisibilityControls
+	// Mixin Content Type with alias "onSaleControl"
+	/// <summary>On sale control</summary>
+	public partial interface IOnSaleControl : IPublishedContent
+	{
+		/// <summary>Discount</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
+		int Discount { get; }
+
+		/// <summary>Discount Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
+		string DiscountName { get; }
+
+		/// <summary>Discount toggle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
+		bool DiscountToggle { get; }
+	}
+
+	/// <summary>On sale control</summary>
+	[PublishedModel("onSaleControl")]
+	public partial class OnSaleControl : PublishedContentModel, IOnSaleControl
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		public new const string ModelTypeAlias = "cart";
+		public new const string ModelTypeAlias = "onSaleControl";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Cart, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OnSaleControl, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Cart(IPublishedContent content)
+		public OnSaleControl(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Main Image: Choose the main image for this page
+		/// Discount: discount percentage eg: enter 30 for 30% off
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		[ImplementPropertyType("mainImage")]
-		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent MainImage => global::Umbraco.Web.PublishedModels.MainImageControls.GetMainImage(this);
+		[ImplementPropertyType("discount")]
+		public virtual int Discount => GetDiscount(this);
+
+		/// <summary>Static getter for Discount</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
+		public static int GetDiscount(IOnSaleControl that) => that.Value<int>("discount");
 
 		///<summary>
-		/// Meta Description: Enter the meta description for this page
+		/// Discount Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		[ImplementPropertyType("metaDescription")]
-		public virtual string MetaDescription => global::Umbraco.Web.PublishedModels.SEocontrols.GetMetaDescription(this);
+		[ImplementPropertyType("discountName")]
+		public virtual string DiscountName => GetDiscountName(this);
+
+		/// <summary>Static getter for Discount Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
+		public static string GetDiscountName(IOnSaleControl that) => that.Value<string>("discountName");
 
 		///<summary>
-		/// Meta Keywords: Enter the keywords for this page
+		/// Discount toggle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		[ImplementPropertyType("metaKeywords")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> MetaKeywords => global::Umbraco.Web.PublishedModels.SEocontrols.GetMetaKeywords(this);
+		[ImplementPropertyType("discountToggle")]
+		public virtual bool DiscountToggle => GetDiscountToggle(this);
 
-		///<summary>
-		/// Meta Name: Enter the meta name for this page
-		///</summary>
+		/// <summary>Static getter for Discount toggle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		[ImplementPropertyType("metaName")]
-		public virtual string MetaName => global::Umbraco.Web.PublishedModels.SEocontrols.GetMetaName(this);
-
-		///<summary>
-		/// Hide From XML Sitemap: Tick this if you want to hide this page from the XML sitemap
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		[ImplementPropertyType("hideFromXMLSitemap")]
-		public virtual bool HideFromXmlsitemap => global::Umbraco.Web.PublishedModels.VisibilityControls.GetHideFromXmlsitemap(this);
-
-		///<summary>
-		/// Umbraco Navi Hide: Tick this box if you want to hide this page from the navigation and from search results
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		[ImplementPropertyType("umbracoNaviHide")]
-		public virtual bool UmbracoNaviHide => global::Umbraco.Web.PublishedModels.VisibilityControls.GetUmbracoNaviHide(this);
+		public static bool GetDiscountToggle(IOnSaleControl that) => that.Value<bool>("discountToggle");
 	}
 }

@@ -1,11 +1,24 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ProductCatelog>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @using Uniwear.core.Extensions
-@using Uniwear.core
+@using Uniwear.core.Helpers;
 @{
     Layout = "master.cshtml";
-    var products = Model.Root().Descendants().Where(m => m.IsDocumentType("product") && m.IsVisible());
+    var products = Model.Root().Descendants().Where(m => m.IsDocumentType("product") && m.IsVisible() && m.Parent.Name == Model.Name);
     string imageUrl = "";
+    var fallbackPageSize = 12;
+
+    var pageNumber = QueryStringHelper.getIntFromQueryString(Request, "page", 1);
+    var pageSize = QueryStringHelper.getIntFromQueryString(Request, "size", fallbackPageSize);
+
+    var hasProduct = products != null && products.Any();
+
+    var pageOfProduct = hasProduct
+        ? products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList()
+        : Enumerable.Empty<IPublishedContent>();
+    var totalItemCount = hasProduct ? products.Count() : 0;
+    var pageCount = totalItemCount > 0 ? Math.Ceiling((double)totalItemCount / pageSize) : 1;
+
 }
 
 <head>
@@ -15,9 +28,9 @@
 @Html.Partial("~/Views/Partials/filters.cshtml")
 <div id="product_container">
     <div class="row rowone flex-box" id="product-list">
-        @if (products != null && products.Any())
+        @if (pageOfProduct != null && pageOfProduct.Any())
         {
-            foreach (Product product in products)
+            foreach (Product product in pageOfProduct)
             {
                 if (product.Ancestor().Name == Model.Name)
                 {
@@ -48,16 +61,66 @@
                                     <span class="price">
                                         AU$ @(product.CalculatePrice().Rounded(2).WithTax)
                                     </span>
-                                        <span class="add-to-cart">
-                                            <span class="txt">Take a closer look</span>
-                                        </span>
+                                    <span class="add-to-cart">
+                                        <span class="txt">Take a closer look</span>
+                                    </span>
                                 </a>
                             </div>
                         </div>
                     </div>
                 }
             }
+
         }
     </div>
 </div>
-@*@(product.Value("productPrice").TryConvertTo<Vendr.Umbraco.Models.PricePropertyValue>().Result.GetPriceFor(Consts.AUDId).Value)*@
+<div id="paging" class="clearfix">
+    <div class="pagination">
+        @if (pageNumber > 1)
+        {
+            <a href="@($"{Model.Url()}?page={pageNumber - 1}&size={pageSize}")"><<</a>
+        }
+        else
+        {
+            <a href="@Model.Url()"><<</a>
+        }
+
+        @for (int i = 1; i < pageCount + 1; i++)
+        {
+            <a href="@($"{Model.Url()}?page={i}&size={pageSize}")">@i</a>
+        }
+
+
+        @if (pageNumber < pageCount)
+        {
+            <a href="@($"{Model.Url()}?page={pageNumber + 1}&size={pageSize}")">>></a>
+        }
+        else
+        {
+            <a href="@Model.Url()">>></a>
+        }
+    </div>
+
+
+</div>
+
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    #paging {
+        width: fit-content;
+        width: -moz-fit-content;
+        height: 40px;
+        margin: 0 auto;
+    }
+    
+</style>
