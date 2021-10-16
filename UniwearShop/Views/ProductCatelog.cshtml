@@ -4,26 +4,37 @@
 @using Uniwear.core.Helpers;
 @{
     Layout = "master.cshtml";
-    var products = Model.Root().Descendants().Where(m => m.IsDocumentType("product") && m.IsVisible() && m.Parent.Name == Model.Name);
+    IEnumerable<IPublishedContent> products;
+    if (Session["list"] != null) //accessing session data to check for item to filter
+    {
+        string[] ary = Session["list"].ToString().Split(',');
+        List<string> names = ary.ToList();
+        products = Model.Root().Descendants().Where(m => m.IsDocumentType("product") && m.IsVisible() && m.Parent.Name == Model.Name);
+        products = products.Where(m => names.Contains(m.Value("category")));
+        Session["list"] = null;//clearing session data 
+    }
+    else
+    {
+        products = Model.Root().Descendants().Where(m => m.IsDocumentType("product") && m.IsVisible() && m.Parent.Name == Model.Name);
+    }
+
     string imageUrl = "";
     var fallbackPageSize = 12;
-
     var pageNumber = QueryStringHelper.getIntFromQueryString(Request, "page", 1);
     var pageSize = QueryStringHelper.getIntFromQueryString(Request, "size", fallbackPageSize);
-
     var hasProduct = products != null && products.Any();
-
     var pageOfProduct = hasProduct
         ? products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList()
         : Enumerable.Empty<IPublishedContent>();
     var totalItemCount = hasProduct ? products.Count() : 0;
     var pageCount = totalItemCount > 0 ? Math.Ceiling((double)totalItemCount / pageSize) : 1;
-
 }
 
 <head>
     <link href="~/css/card.css" rel="stylesheet" />
 </head>
+
+
 @Html.Partial("~/Views/Partials/carousel.cshtml")
 @Html.Partial("~/Views/Partials/filters.cshtml")
 <div id="product_container">

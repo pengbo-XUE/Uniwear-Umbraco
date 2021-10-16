@@ -9,14 +9,8 @@
             form.submit();
         })
     },
-    showResult: function () {
-        $("#form-outer").hide('slow');
-        $("#article-content").hide('slow');
-        $("#form-result").show('slow');
-        $("pre").each(function() {
-            $(this).addClass("prettyprint");
-            PR.prettyPrint();
-        });
+    showResult: function (result) {
+        console.log(result);
     }
 };
 

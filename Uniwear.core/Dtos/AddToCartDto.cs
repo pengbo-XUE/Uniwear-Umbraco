@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Uniwear.core.Dtos
 {
-   
     public class AddToCartDto
     {
         public string productReference { get; set; }

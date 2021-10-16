@@ -16,14 +16,13 @@ namespace Uniwear.core.Controllers
         [HttpGet]
         public ActionResult RenderProduct(DisplayViewModel viewModel) 
         {
-            //DisplayViewModel viewModel = new DisplayViewModel() { productDisplay = _productDisplay};
+           
             return PartialView("~/Views/Partials/Display/DisplayProduct.cshtml", viewModel); 
         }
 
         [HttpPost]
         public ActionResult RenderProduct(DisplayViewModel viewModel, string Msg ="Product added to cart")
         {
-            //DisplayViewModel viewModel = new DisplayViewModel() { productDisplay = _productDisplay};
             ViewData["Msg"] = Msg;
             return PartialView("~/Views/Partials/Display/DisplayProduct.cshtml", viewModel);
         }

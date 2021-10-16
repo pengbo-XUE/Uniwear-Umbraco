@@ -504,6 +504,7 @@
     <Content Include="Views\Partials\Display\CartCount.cshtml" />
     <Content Include="Views\Cart.cshtml" />
     <Content Include="Views\Map.cshtml" />
+    <Content Include="Views\Partials\Catelog\CatelogPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

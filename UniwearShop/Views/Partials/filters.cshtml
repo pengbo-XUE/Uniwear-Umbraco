@@ -2,31 +2,49 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ProductCatelog>
 @{
     ViewBag.Title = "Filters";
+
+    List<string> nameList = new List<string>();
 }
 <head>
     <link href="~/css/filter.css" rel="stylesheet" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.1/jquery.validate.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
 </head>
+
+
 <div style="width:78%; margin: auto;">
     <span style="font-size:20px;cursor:pointer; margin:inherit" onclick="openFilter()"><i class="fas fa-filter"></i> Add Filters</span>
 </div>
 
 <div id="filters" class="filters">
-    <form action="/" method="post" >
-        <a href="javascript:void(0)" class="closebtn" onclick="closeFilter()">&times;</a>
-        @foreach (Category category in Model.Value<IEnumerable<Category>>("containsCategory"))
-        {
-            string name = category.Value<string>("categoryName");
-            <div>
-                 <label><input type="checkbox" name="filter" value=@name class="form-check-input" />@name</label>
-            </div>
-
-        }
-
-        <button class="btn btn-dark" type="submit">Apply filter</button>
-    </form>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeFilter()">&times;</a>
+    @foreach (Category category in Model.Value<IEnumerable<Category>>("containsCategory"))
+    {
+        string name = category.Value<string>("categoryName");
+        nameList.Add(name);
+        <div>
+            <label><input type="checkbox" onchange="reFac()" id="@name" value=@name class="form-check-input" />@name</label>
+        </div>
+    }
+    @using (Ajax.BeginForm("Filter", "CatelogSurface", new AjaxOptions()
+    {
+        UpdateTargetId = "result",
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        OnSuccess = "success()"
+    }))
+    {
+        <input type="hidden" name="jsonList" id="inputHidden" />
+        <input type="hidden" name="name" value=@Model.Name/>
+        <button class="btn btn-dark"  type="submit">Apply filter</button>
+    }
 </div>
 
+
 <script>
+    var productList = @Html.Raw(Json.Encode(nameList.ToList()));
+    var display;
     function openFilter() {
         document.getElementById("filters").style.width = "250px";
     }
@@ -34,4 +52,29 @@
     function closeFilter() {
         document.getElementById("filters").style.width = "0";
     }
+    function reFac() {
+        display = productList.filter(filters);
+        console.log(display);
+        document.getElementById("inputHidden").value = display;
+        
+    }
+    function filters(name) {
+        return document.getElementById(name).checked;
+    }
+
+
+    function success() {
+        location.reload()
+    }
 </script>
+
+@*
+    Ajax controller call, not used anymore*@
+@*      $.ajax({
+        url: 'https://localhost:44355/umbraco/Surface/CatelogSurface/Filter',
+        type: "POST",
+        data: { "jsonList": "hmm" },
+        dataType: "json",
+        success: function (response) { console.log(response);  },
+    });*@
+
