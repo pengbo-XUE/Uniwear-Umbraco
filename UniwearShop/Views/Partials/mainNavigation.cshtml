@@ -62,18 +62,16 @@
             </div>
             <div id="flex_3">
                 <ul class="navbar__menu_side">
-                    <li class="navbar__item ">
-                        <a href="/cart" class="navbar__links" readonly><i class="fas fa-search"></i> </a>
-                    </li>
-                    <li class="navbar__item  dropdown">
-                        <a href="contact.html" class="navbar__links" id="signup__btn" readonly>
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <div class="dropdown-content">
-                            <a class="dropdown_item" href="#">Login</a>
-                            <a class="dropdown_item" href="#">Signup</a>
-                            <a class="dropdown_item" href="@mapPage.Url()">Find a store</a>
+                    <li class="navbar__item search-dropdown">
+                        <a  class="navbar__links"  id="search-button" readonly><i class="fas fa-search"></i> </a>
+                        <div class="dropdown-content-search" >
+                            @Html.Partial("~/Views/Partials/search.cshtml")
                         </div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="@mapPage.Url()" class="navbar__links" id="signup__btn" readonly>
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
                     </li>
                     <li class="navbar__item ">
                         <a href="/cart" class="navbar__links" readonly><i class="fas fa-shopping-cart"></i> @Html.Action("CartCount", "CartSurface")</a>
@@ -87,5 +85,8 @@
 </nav>
 
 
-
-
+<script>
+    $('#search-button').click(function () {
+        $('.search-dropdown').toggleClass('active');
+    });
+</script>

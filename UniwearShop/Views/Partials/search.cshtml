@@ -1,0 +1,90 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Current = Umbraco.Web.Composing.Current;
+@{
+    var homePage = Model.AncestorOrSelf("home");
+    var searchQuery = Request.QueryString["q"];
+
+}
+<form action="@Model.Url()" method="GET" id="search">
+    <div class="search-container">
+        <input type="text" class="form-control search-input" name="q" value="@searchQuery" />
+        <button class="btn btn-primary search-button">@Umbraco.GetDictionaryValue("Search.SearchButton")</button>
+    </div>
+</form>
+
+<div class="search-display">
+    @if (!string.IsNullOrWhiteSpace(searchQuery))
+    {
+
+        <script>
+            document.querySelector('.search-dropdown').classList.add('active')
+        </script>
+
+        var results = Current.PublishedContentQuery.Search(searchQuery);
+        long resultCount = results != null && results.Any() ? results.Where(m => m.Content.ContentType.Alias == "product").Count() : 0;
+        <p>your search of <strong>@searchQuery</strong> found <strong>@resultCount</strong> results </p>
+        if (resultCount > 0)
+        {
+            <div class="search-display-container" style="height: 80vh; overflow-y: scroll;">
+                @foreach (var result in results)
+                {
+                    if (result.Content.ContentType.Alias == "product")
+                    {
+                        var title = result.Content.Value<string>
+                    ("title");
+                        var brand = result.Content.Value<string>
+                            ("productBrand");
+                        var image = result.Content.Value<IPublishedContent>
+                            ("productImage"); ;
+
+                        <div class="product-preview">
+                            @if (image != null)
+                            {
+                                var imgUrl = image.GetCropUrl("catelog.display");
+                                <img src="@imgUrl" class="search-image" style=" width:100px; height:100px;" alt="Alternate Text" />
+                            }
+
+                            <div>
+                                <h3 class="post-title">
+                                    @(!string.IsNullOrWhiteSpace(title)? title: result.Content.Name)
+                                </h3>
+                                @if (!string.IsNullOrWhiteSpace(brand))
+                                {
+                                    <h4>
+                                        @brand
+                                    </h4>
+                                }
+                                <a href="@result.Content.Url()">@result.Content.Name</a>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    }
+                }
+            </div>
+        }
+    }
+</div>
+<style>
+    .search-container {
+        display: inline-flex;
+        padding: 50px;
+        width: 100%;
+    }
+
+    .search-image {
+        margin-right: 50px;
+    }
+
+    .search-display {
+        margin-left: 150px;
+    }
+
+    .search-display-container {
+        height: fit-content;
+    }
+
+    .product-preview {
+        display: inline-flex;
+    }
+</style>

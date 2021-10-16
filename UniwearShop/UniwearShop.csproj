@@ -425,7 +425,6 @@
     <Compile Include="App_Data\Models\Product.generated.cs" />
     <Compile Include="App_Data\Models\ProductCatelog.generated.cs" />
     <Compile Include="App_Data\Models\ProductControl.generated.cs" />
-    <Compile Include="App_Data\Models\Search.generated.cs" />
     <Compile Include="App_Data\Models\SEocontrols.generated.cs" />
     <Compile Include="App_Data\Models\UmbracoMediaArticle.generated.cs" />
     <Compile Include="App_Data\Models\UmbracoMediaAudio.generated.cs" />
@@ -477,7 +476,6 @@
     <Content Include="Views\content.cshtml" />
     <Content Include="Views\error.cshtml" />
     <Content Include="Views\home.cshtml" />
-    <Content Include="Views\search.cshtml" />
     <Content Include="Views\xMLSitemap.cshtml" />
     <Content Include="Views\Partials\footer.cshtml" />
     <Content Include="Views\Partials\mainNavigation.cshtml" />
@@ -505,6 +503,7 @@
     <Content Include="Views\Cart.cshtml" />
     <Content Include="Views\Map.cshtml" />
     <Content Include="Views\Partials\Catelog\CatelogPartial.cshtml" />
+    <Content Include="Views\Partials\search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
