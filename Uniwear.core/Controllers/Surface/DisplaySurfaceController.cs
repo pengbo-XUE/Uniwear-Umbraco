@@ -16,7 +16,6 @@ namespace Uniwear.core.Controllers
         [HttpGet]
         public ActionResult RenderProduct(DisplayViewModel viewModel) 
         {
-           
             return PartialView("~/Views/Partials/Display/DisplayProduct.cshtml", viewModel); 
         }
 

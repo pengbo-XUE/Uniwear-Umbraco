@@ -95,10 +95,12 @@ C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bi
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Umbraco.ModelsBuilder.Embedded.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Umbraco.Web.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Umbraco.Web.UI.dll
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Checkout.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Common.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Core.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Infrastructure.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Umbraco.dll
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Umbraco.Startup.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Umbraco.Web.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Web.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\BouncyCastle.Crypto.xml
@@ -185,6 +187,7 @@ C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bi
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Core.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Infrastructure.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Umbraco.xml
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Umbraco.Startup.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Umbraco.Web.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\bin\Debug\Vendr.Web.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\Uniwear.core\obj\Debug\Uniwear.core.csproj.CoreCompileInputs.cache

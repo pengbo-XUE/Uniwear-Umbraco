@@ -34,7 +34,8 @@ namespace Uniwear.core.ViewPages
             Current.Factory.GetInstance<ServiceContext>(),
             Current.Factory.GetInstance<AppCaches>()
         )
-        { }
+        { 
+        }
 
         public UniwearViewPage(/*IProductService _productService,*/ ServiceContext services, AppCaches appCaches)
         {

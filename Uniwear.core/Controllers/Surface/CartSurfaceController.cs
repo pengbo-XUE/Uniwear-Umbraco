@@ -54,6 +54,7 @@ namespace Uniwear.core.Controllers
                 return CurrentUmbracoPage();
             }
             TempData["addedProductReference"] = postModel.productReference;
+            TempData["Msg"] = "Item added to cart!";
             return RedirectToCurrentUmbracoPage();
         }
         [HttpPost]

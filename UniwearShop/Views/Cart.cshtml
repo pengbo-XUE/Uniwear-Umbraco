@@ -6,9 +6,9 @@
 @{
     Layout = "master.cshtml";
     var order = Model.GetCunrrentOrder();
+    var checkoutPage = Model.Root().ChildrenOfType("vendrCheckoutCheckoutPage").FirstOrDefault();
 }
 <div class="container" style="height:60vh; margin-top:80px;">
-
 
     @if (Model != null && order != null && order.OrderLines.Any())
     {
@@ -42,7 +42,6 @@
                                     <td><img src="@image" alt="Alternate Text" style=" width:60%; height:60%; color:black; text-decoration:none" /></td>
                                     <td><a style="color:black; text-decoration:none; margin-top:3px" href="@url">@name - @brand</a></td>
 
-
                                     <td><p style="color:black; text-decoration:none; margin-top:3px">AU$ @(item.OrderLine.UnitPrice.Value.WithTax)</p></td>
                                     <td>
                                         <div class="input-group">
@@ -69,7 +68,6 @@
                             }
                         }
                         <tr>
-
                             <td colspan="2"> Total</td>
                             <td class="td-price">
                                 AU$  @(order.SubtotalPrice.Value.WithTax)
@@ -79,7 +77,8 @@
                                 <button class="btn btn-dark" title="Refresh Cart">Refresh Cart</button>
                             </td>
                             <td>
-                                <button class="btn btn-success" title="Complete">Checkout</button>
+                                <a href="@checkoutPage.Url()" class="btn btn-success" title="Complete">Checkout</a>
+                                
                             </td>
                         </tr>
                     </tbody>

@@ -294,6 +294,9 @@
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.17.0\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Vendr.Checkout, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vendr.Checkout.2.0.0\lib\net472\Vendr.Checkout.dll</HintPath>
+    </Reference>
     <Reference Include="Vendr.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Vendr.Common.2.0.0\lib\netstandard2.0\Vendr.Common.dll</HintPath>
     </Reference>
@@ -305,6 +308,9 @@
     </Reference>
     <Reference Include="Vendr.Umbraco, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Vendr.Umbraco.2.0.0\lib\net472\Vendr.Umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendr.Umbraco.Startup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vendr.Umbraco.Startup.2.0.0\lib\net472\Vendr.Umbraco.Startup.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Umbraco.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Vendr.Umbraco.Web.2.0.0\lib\net472\Vendr.Umbraco.Web.dll</HintPath>
@@ -319,7 +325,6 @@
     <Compile Include="Controllers\Surface\CartSurfaceController.cs" />
     <Compile Include="Controllers\Surface\CatelogSurfaceController.cs" />
     <Compile Include="Controllers\Surface\DisplaySurfaceController.cs" />
-    <Compile Include="Controllers\Surface\FilterBarSurfaceController.cs" />
     <Compile Include="Controllers\Surface\ProductSurfaceController.cs" />
     <Compile Include="Dtos\AddToCartDto.cs" />
     <Compile Include="Dtos\RemoveFromCartDto.cs" />

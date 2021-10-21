@@ -14,10 +14,12 @@
     }
     string s = display.Ancestor().Name;
 }
-@if (ViewData["Msg"] != null)
+
+
+@if (TempData["Msg"] != null)
 {
     <div style="text-align:center; margin-bottom:30px;">
-        <h2 id="Msg">"@ViewData["Msg"]"</h2>
+        <h2 id="Msg">"@TempData["Msg"]</h2>
     </div>
 
 }
@@ -37,11 +39,11 @@
         <h4>Buy it now</h4>
         <div class="product-display-cta">
             <p class="product-display-price">AU$ @(display.CalculatePrice().Rounded(2).WithTax) </p>
-            
+
             @using (Html.BeginUmbracoForm("AddToCart", "CartSurface"))
             {
-                
-                 <input type="hidden" name="pageProdcutReference" value="@display.GetProductReference()" />
+
+                <input type="hidden" name="pageProdcutReference" value="@display.GetProductReference()" />
                 <h4 style="margin-top:50px;">Please pick a size</h4>
                 <table class="table">
                     <thead>
@@ -71,8 +73,8 @@
                         }
                     </tr>
                 </table>
-                
-                @Html.EditorFor(m=>m.quantity, new { htmlAttributes = new { @class = "verificationStatusSelect", min = 1 } })
+
+                @Html.EditorFor(m => m.quantity, new { htmlAttributes = new { @class = "verificationStatusSelect", min = 1 } })
                 <button class="btn btn-dark" type="submit">Add To Cart</button>
             }
 
@@ -88,5 +90,23 @@
     }, 3000);
 </script>
 
-@*@display.ProductPrice.GetPriceFor(Consts.AUDId).Value*@
-@*display.CalculatePrice().Rounded(2).WithTax*@
+
+@section ScriptBottom
+{
+    @if (!(TempData["addedProductReference"]?.ToString()).IsNullOrWhiteSpace())
+    {
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                Toastify({
+                    text: "Added to cart",
+                    duration: 10,
+                    newWindow: false,
+                    gravity: "top",
+                    position: "center",
+                    close: true,
+                    stopOnFocus: true,
+                }).showToast();
+            });
+        </script>
+    }
+}

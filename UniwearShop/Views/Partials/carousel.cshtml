@@ -9,7 +9,6 @@
 
 <div class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-
         @foreach (var imageItem in carouselContents)
         {
             var img = imageItem.Value<IPublishedContent>("carouselImage");
@@ -27,5 +26,4 @@
                 <img class="d-block w-100" src='@img.Url()' />
             </div>}
     </div>
-
 </div>

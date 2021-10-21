@@ -72,6 +72,8 @@ C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\CSharpTest.Net.Collections.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\DeepEqual.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Examine.dll
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Flurl.dll
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Flurl.Http.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\HtmlAgilityPack.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\ICSharpCode.SharpZipLib.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\ImageProcessor.dll
@@ -146,9 +148,11 @@ C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Umbraco.Web.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Umbraco.Web.UI.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Uniwear.core.dll
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Vendr.Checkout.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Vendr.Common.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Vendr.Core.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Vendr.Infrastructure.dll
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Vendr.PaymentProviders.PayPal.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Vendr.Umbraco.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Vendr.Umbraco.Startup.dll
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Vendr.Umbraco.Web.dll
@@ -160,6 +164,8 @@ C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\ClientDependency.Core.Mvc.pdb
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\CSharpTest.Net.Collections.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Examine.pdb
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Flurl.xml
+C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\Flurl.Http.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\HtmlAgilityPack.pdb
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\HtmlAgilityPack.xml
 C:\Users\Pengb\OneDrive\Desktop\Tim.DEV\Uniwear-shop\UniwearShop\UniwearShop\bin\ImageProcessor.xml

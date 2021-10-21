@@ -11,7 +11,5 @@ namespace Uniwear.core.Dtos
         public string productReference { get; set; }
         public decimal quantity { get; set; }
         public string size { get; set; }
-    
     }
 }
- 

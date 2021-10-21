@@ -13,6 +13,5 @@ namespace Uniwear.core.ViewModels
         public int pageSize { get; set; }
         public int pageNumber { get; set; }
         public double pageCount { get; set; }
-        
     }
 }

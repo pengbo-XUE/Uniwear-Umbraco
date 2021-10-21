@@ -62,6 +62,12 @@
     <Reference Include="Examine, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Examine.1.2.0\lib\net452\Examine.dll</HintPath>
     </Reference>
+    <Reference Include="Flurl, Version=2.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.2.8.2\lib\net40\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.2.4.2\lib\net46\Flurl.Http.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -311,6 +317,9 @@
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.17.0\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Vendr.Checkout, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vendr.Checkout.2.0.0\lib\net472\Vendr.Checkout.dll</HintPath>
+    </Reference>
     <Reference Include="Vendr.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Vendr.Common.2.0.0\lib\netstandard2.0\Vendr.Common.dll</HintPath>
     </Reference>
@@ -319,6 +328,9 @@
     </Reference>
     <Reference Include="Vendr.Infrastructure, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Vendr.Infrastructure.2.0.0\lib\net472\Vendr.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendr.PaymentProviders.PayPal, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vendr.PaymentProviders.PayPal.2.0.0\lib\netstandard2.0\Vendr.PaymentProviders.PayPal.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Umbraco, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Vendr.Umbraco.2.0.0\lib\net472\Vendr.Umbraco.dll</HintPath>
@@ -377,6 +389,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\card.css" />
+    <Content Include="css\checkout.css" />
     <Content Include="css\filter.css" />
     <Content Include="css\footer.css" />
     <Content Include="css\home.css" />
@@ -404,6 +417,7 @@
     <Compile Include="App_Data\Models\CarouselImages.generated.cs" />
     <Compile Include="App_Data\Models\Cart.generated.cs" />
     <Compile Include="App_Data\Models\Category.generated.cs" />
+    <Compile Include="App_Data\Models\Checkout.generated.cs" />
     <Compile Include="App_Data\Models\Contact.generated.cs" />
     <Compile Include="App_Data\Models\ContactFormControls.generated.cs" />
     <Compile Include="App_Data\Models\Content.generated.cs" />
@@ -502,8 +516,8 @@
     <Content Include="Views\Partials\Display\CartCount.cshtml" />
     <Content Include="Views\Cart.cshtml" />
     <Content Include="Views\Map.cshtml" />
-    <Content Include="Views\Partials\Catelog\CatelogPartial.cshtml" />
     <Content Include="Views\Partials\search.cshtml" />
+    <Content Include="Views\Checkout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

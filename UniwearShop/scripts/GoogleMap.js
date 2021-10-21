@@ -1,16 +1,12 @@
 function initMap() {
     var myMapCenter = { lat: -37.82183713408313, lng: 144.96061676199554 };
 
-
-
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         center: myMapCenter,
         zoom: 10
     });
 
-
     function markStore(storeInfo) {
-
 
         var marker = new google.maps.Marker({
             map: map,
@@ -18,12 +14,10 @@ function initMap() {
             title: storeInfo.name
         });
 
-
         marker.addListener('click', function () {
             showStoreInfo(storeInfo);
         });
     }
-
 
     function showStoreInfo(storeInfo) {
         var info_div = document.getElementById('info_div');
@@ -48,5 +42,4 @@ function initMap() {
     stores.forEach(function (store) {
         markStore(store);
     });
-
 }
