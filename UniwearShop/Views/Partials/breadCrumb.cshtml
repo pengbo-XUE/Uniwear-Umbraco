@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{ var ancestors = Model.Ancestors().Reverse(); }
+<div>
+    <div class="flex Uni-breadcrumb">
+        @foreach (var ancestor in ancestors)
+        {
+            <a href="@ancestor.Url()" class="hover:text-teal-400">@ancestor.Name</a>
+            <span class="mx-2">›</span>
+        }
+        <span>@(Model.ContentType.Alias == Home.ModelTypeAlias ? "Featured Products" : @Model.Name)</span>
+    </div>
+</div>
+<style>
+    .Uni-breadcrumb {
+        padding:10px 7px 10px 4px;
+        width:78%;
+        margin: 0 auto;
+    }
+</style>

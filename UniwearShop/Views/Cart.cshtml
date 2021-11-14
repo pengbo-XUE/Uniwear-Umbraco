@@ -8,6 +8,8 @@
     var order = Model.GetCunrrentOrder();
     var checkoutPage = Model.Root().ChildrenOfType("vendrCheckoutCheckoutPage").FirstOrDefault();
 }
+@Html.Partial("~/Views/Partials/breadCrumb.cshtml")
+
 <div class="container" style="height:60vh; margin-top:80px;">
 
     @if (Model != null && order != null && order.OrderLines.Any())
@@ -15,7 +17,7 @@
         <h3><strong>Your Cart</strong></h3>
         <br />
         using (Html.BeginUmbracoForm("UpdateCart", "CartSurface"))
-        { 
+        {
             <div>
                 <table class="table table-shopping">
                     <thead>
@@ -64,7 +66,7 @@
                             }
                             catch (Exception ex)
                             {
-                                    
+
                             }
                         }
                         <tr>
@@ -78,7 +80,7 @@
                             </td>
                             <td>
                                 <a href="@checkoutPage.Url()" class="btn btn-success" title="Complete">Checkout</a>
-                                
+
                             </td>
                         </tr>
                     </tbody>

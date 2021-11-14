@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="~/css/checkout.css">
 
+@Html.Partial("~/Views/Partials/breadCrumb.cshtml")
 
-  
 <div class="checkout-container">
     <div class="col-50">
         <div class="address-container">
@@ -49,8 +49,8 @@
     <div class="col-50">
         @{
             var image = Model.MainImage.GetCropUrl("cart.display");
-         }
-        <img src="@image" alt="Alternate Text" id="address-img"/>
+        }
+        <img src="@image" alt="Alternate Text" id="address-img" />
     </div>
 </div>
 

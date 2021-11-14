@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
-   
+
 }
 <style>
     html,
@@ -11,21 +11,24 @@
         margin: 0;
         padding: 0;
     }
+
     .locations {
-        display:inline-flex;
+        display: inline-flex;
         width: fit-content;
-        margin:0 21%;
+        margin: 0 21%;
         margin-top: 30px;
     }
+
     .location_container {
         width: 100%;
-        
     }
+
     #info_div {
         margin-left: 80px;
     }
+
     .store_info {
-        padding:20px;
+        padding: 20px;
     }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -33,7 +36,7 @@
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAEJ7NYBdBAuwXT13SSzIhD06l0sFREw&callback=initMap"
         async defer></script>
-
+@Html.Partial("~/Views/Partials/breadCrumb.cshtml")
 <div class="location_container">
     <div class="locations">
         <div id="map-canvas" style="height: 500px; width: 500px">
@@ -68,4 +71,4 @@
             </div>
         </div>
     </div>
-</div>   
+</div>

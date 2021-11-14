@@ -518,6 +518,7 @@
     <Content Include="Views\Map.cshtml" />
     <Content Include="Views\Partials\search.cshtml" />
     <Content Include="Views\Checkout.cshtml" />
+    <Content Include="Views\Partials\breadCrumb.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
